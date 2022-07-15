@@ -10,6 +10,7 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import org.w3c.dom.Text
@@ -45,6 +46,7 @@ class MainActivity : AppCompatActivity() {
 
 
         val lparams: LinearLayout.LayoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT)
+        lparams.setMargins(10, 10, 10, 10);
         for (element in dataModel.tags){
             val textView: TextView = TextView(this);
             textView.text = element
@@ -54,6 +56,12 @@ class MainActivity : AppCompatActivity() {
 
         Picasso.with(this).load(dataModel.image).into(banner)
         Picasso.with(this).load(dataModel.logo).into(logo)
+
+        val mRecyclerView: RecyclerView = this.findViewById(R.id.recyclerView)
+        var mLayoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        mRecyclerView!!.layoutManager = mLayoutManager
+        val mAdapter: RecyclerAdapter = RecyclerAdapter(dataModel.reviews)
+        mRecyclerView!!.adapter = mAdapter
     }
 
 
