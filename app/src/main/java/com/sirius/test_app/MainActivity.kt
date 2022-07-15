@@ -29,6 +29,7 @@ class MainActivity : AppCompatActivity() {
         val ratingText: TextView = this.findViewById(R.id.ratingText)
         val reviewCountText: TextView = this.findViewById(R.id.reviewsCountText)
         val gradeCnt: TextView = this.findViewById(R.id.gradeCntView)
+        val tagsLayout: LinearLayout = this.findViewById(R.id.tagsLayout)
         val ratingBar: RatingBar = this.findViewById(R.id.ratingBar)
         val ratingBar2: RatingBar = this.findViewById(R.id.ratingBar2)
         val banner: ImageView = this.findViewById(R.id.banner)
@@ -51,7 +52,10 @@ class MainActivity : AppCompatActivity() {
             val textView: TextView = TextView(this);
             textView.text = element
             textView.layoutParams = lparams
+            textView.setBackgroundResource(R.drawable.tag_round)
+            textView.textSize = 12f
             textView.setTextColor(Color.parseColor("#44A9F4"))
+            tagsLayout.addView(textView)
         }
 
         Picasso.with(this).load(dataModel.image).into(banner)

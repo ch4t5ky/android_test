@@ -15,12 +15,11 @@
         android:id="@+id/descriptionText"
         android:layout_width="368dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="128dp"
         android:textColor="#EEF2FB"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/banner" />
+        app:layout_constraintTop_toBottomOf="@+id/tagsLayout" />
 
     <ImageView
         android:id="@+id/banner"
@@ -201,6 +200,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recyclerView"
         app:layout_constraintVertical_bias="0.0" />
+
+    <LinearLayout
+        android:id="@+id/tagsLayout"
+        android:layout_width="366dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ratingBar"></LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
